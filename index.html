@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Model - Chat Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Autonomous Model</h1>
+            <p class="subtitle">Live Chat & State Monitor</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Emotional State Panel -->
+            <aside class="state-panel">
+                <h2>Emotional State</h2>
+                <div class="state-item">
+                    <label>Curiosity</label>
+                    <div class="state-bar">
+                        <div class="state-fill" id="curiosity-fill"></div>
+                    </div>
+                    <span class="state-value" id="curiosity-value">0%</span>
+                </div>
+                <div class="state-item">
+                    <label>Restlessness</label>
+                    <div class="state-bar">
+                        <div class="state-fill" id="restlessness-fill"></div>
+                    </div>
+                    <span class="state-value" id="restlessness-value">0%</span>
+                </div>
+                <div class="state-item">
+                    <label>Contentment</label>
+                    <div class="state-bar">
+                        <div class="state-fill" id="contentment-fill"></div>
+                    </div>
+                    <span class="state-value" id="contentment-value">0%</span>
+                </div>
+                <div class="state-item">
+                    <label>Frustration</label>
+                    <div class="state-bar">
+                        <div class="state-fill" id="frustration-fill"></div>
+                    </div>
+                    <span class="state-value" id="frustration-value">0%</span>
+                </div>
+                
+                <div class="focus-box">
+                    <h3>Current Focus</h3>
+                    <p id="current-focus">Loading...</p>
+                </div>
+
+                <button class="refresh-btn" onclick="refreshData()">Refresh Data</button>
+            </aside>
+
+            <!-- Chat Area -->
+            <main class="chat-area">
+                <div class="conversation-feed" id="conversation-feed">
+                    <div class="loading">Loading conversations...</div>
+                </div>
+
+                <div class="input-section">
+                    <input 
+                        type="text" 
+                        id="stimulus-input" 
+                        class="stimulus-input" 
+                        placeholder="Send stimulus to the model..."
+                        onkeypress="handleKeyPress(event)"
+                    >
+                    <button class="send-btn" onclick="sendStimulus()">Send</button>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <p>Last updated: <span id="last-update">Never</span></p>
+            <p>GitHub Repo: <a href="https://github.com/ellernate121-afk/autonomous-model" target="_blank">autonomous-model</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
